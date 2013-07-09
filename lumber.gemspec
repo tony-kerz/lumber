@@ -2,7 +2,7 @@
 require File.expand_path('../lib/lumber/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Matt Conway"]
+  gem.authors       = ["Matt Conway", "tony kerz"]
   gem.email         = ["matt@conwaysplace.com"]
   gem.description   = %q{Lumber tries to make it easy to use the more robust log4r logging system within your rails application.  To do this it sets up log4r configuration from a yml file, and provides utility methods for adding a :logger accessor to classes dynamicaly as they get created.}
   gem.summary       = %q{Lumber integrates the log4r logging system within your application.}

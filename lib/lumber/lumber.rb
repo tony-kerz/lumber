@@ -67,12 +67,17 @@ module Lumber
 
     @@registered_loggers = {}
     self.register_inheritance_handler()
-    
+
+    # <tk>
     if opts[:monitor_store]
       LevelUtil.cache_provider = opts[:monitor_store]
-    elsif defined?(RAILS_CACHE)
-      LevelUtil.cache_provider = RAILS_CACHE
+      #elsif defined?(RAILS_CACHE)
+    elsif not Rails.cache.nil?
+      #  LevelUtil.cache_provider = RAILS_CACHE
+      LevelUtil.cache_provider = Rails.cache
     end
+    # </tk>
+
     LevelUtil.start_monitor(opts[:monitor_interval]) if opts[:monitor_enabled]
   end
 
